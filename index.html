@@ -54,11 +54,12 @@
 			overcount=true;
 		  setTimeout(function(){
 			if(overcount){
+				console.log("메뉴작동,3000")
 				$("#view_menu").animate({left:"0.2vw"},500,function(){
 					$("#cover").css("display","block")
 				});
 			}
-		  },1000)
+		  },3000)
           
         })
         $("#menu_closer").click(function(){
