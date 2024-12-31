@@ -53,6 +53,7 @@
         $("#view_menu").on("mouseenter",function(e){
 			overcount=true;
 		  setTimeout(function(){
+				console.log("메뉴작동 3000")	
 			if(overcount){
 				$("#view_menu").animate({left:"0.2vw"},500,function(){
 					$("#cover").css("display","block")
