@@ -51,11 +51,10 @@
 			overcount=false;
 		})
         $("#view_menu").on("mouseenter",function(e){
+			console.log("진입")
 			overcount=true;
 		  setTimeout(function(){
-				console.log("메뉴작동 3001")	
 			if(overcount){
-				console.log("메뉴작동,3000")
 				$("#view_menu").animate({left:"0.2vw"},500,function(){
 					$("#cover").css("display","block")
 				});
@@ -107,7 +106,6 @@
     </script>
   </head>
   <body>
-	  반가워
     <span id="mainmenu" style="z-index:3;top:1vw;left:0.5vw;font-size:4vw;color:white;position:absolute"
         class="material-symbols-outlined">menu</span>
     <div id="view_menu" style="background:AliceBlue ">
@@ -118,7 +116,6 @@
       <div id="menubar"></div>
       <div id="ttips"></div>
     </div>
-	  반가워
     <h2 id="maintitle" style="font-size:3vw;padding:1vw 0;text-align:center;background:black;color:white"> 스프링 WAS 활용한 로그인 시스템[작성자이름]</h2>
     <p style="text-align:right;margin-right:3vw;margin-bottom:0.8vw">
       <a href="https://github.com/dmsgur/classification_model.git">
@@ -148,7 +145,6 @@
       top:7vw;right:4vw;font-size:2.5vw;z-index:123;cursor:pointer;display:none">
       close
     </span>
-반가워
   </body>
   <style>
     #cover{display:none;z-index:99;margin-left:0.6vw;width:99vw;height:99vh;
