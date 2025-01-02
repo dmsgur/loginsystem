@@ -51,7 +51,6 @@
 			overcount=false;
 		})
         $("#view_menu").on("mouseenter",function(e){
-			console.log("진입")
 			overcount=true;
 		  setTimeout(function(){
 			if(overcount){
@@ -59,7 +58,7 @@
 					$("#cover").css("display","block")
 				});
 			}
-		  },3000)
+		  },800)
           
         })
         $("#menu_closer").click(function(){
