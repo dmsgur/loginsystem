@@ -9,8 +9,8 @@ class DataSet{
 	user_fill=""
 	sub_content=[]
 	sub_img=[]
-	set_content(content){this.sub_content.append(content)}
-	set_img(url){this.sub_img.append(url)}
+	set_content(content){this.sub_content.push(content)}
+	set_img(url){this.sub_img.push(url)}
 	set_fill(ufill){this.user_fill=ufill}
 	 
 }
