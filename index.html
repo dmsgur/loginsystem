@@ -40,7 +40,7 @@
         for (let i=0;i<menu_sets.length;i++){
           let ele = $(`<p style="margin-top:2.5vw" ix=${i}><a class='menus' href="${menu_sets[i].url}"> ${menu_sets[i].mtitle} </a></p>`)
 		  let submenu = `<div ix=${i}>`
-			for(let tip of menusets[i].tips){
+			for(let tip of menu_sets[i].tips){
 				submenu+=`<p style='text-indent:2rem'>${tip}</p>`
 			}
 			submenu+="</div>"
