@@ -9,9 +9,20 @@ class Menu{
 menu0 = new Menu("개발환경구축")//1. 개발목적/언어-선정/요구사항명세/분석 2. 구현도구/라이센스 3. 테스트도구(junit,mockobj)  4. 형상관리도구  5. 빌드도구
 menu0.url = "https://dmsgur.github.io/loginsystem/"
 menu0.tips = ["1.개발목적","2.개발언어선정","3.요구사항명세","4.구현도구","5.테스트도구","6.형상관리도구","7.빌드도구"]
-menu1 = new Menu("개발환경구축")
+menu1 = new Menu("공통모듈 구현 - 회원리스트 출력")
 menu1.url = "https://dmsgur.github.io/loginsystem/"
-menu1.tips = "스프링 mybatis를 활용한 간단한 로그인 시스템"
+menu1.tips = ["1.공통모듈구현","2.테스트케이스","3.단위테스트"]
+menu2 = new Menu("서버프로그램 구현")
+menu2.url = "https://dmsgur.github.io/loginsystem/"
+menu2.tips = ["1.회원가입","2.회원로그인","3.회원리스트","4.테스트케이스","5.목오브젝생성및테스트","6.결과보고서"]
+menu3 = new Menu("배치프로그램구현")
+menu3.url = "https://dmsgur.github.io/loginsystem/"
+menu3.tips = ["1.배치스케줄구성","2.배치프로그램테스트"]
+
+
 
 menu_sets.push(menu0)
 menu_sets.push(menu1)
+menu_sets.push(menu2)
+menu_sets.push(menu3)
+
