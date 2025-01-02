@@ -38,10 +38,10 @@
 	let overcount = false
       $(()=>{
         for (let i=0;i<menu_sets.length;i++){
-          let ele = $(`<p style="margin-top:2.5vw;margin-left:2rem" ix=${i}><a class='menus' href="${menu_sets[i].url}"> ${menu_sets[i].mtitle} </a></p>`)
+          let ele = $(`<p style="margin-top:2.5vw" ix=${i}><a class='menus' href="${menu_sets[i].url}"> ${menu_sets[i].mtitle} </a></p>`)
 		  let submenu = `<div ix=${i}>`
 			for(let tip of menu_sets[i].tips){
-				submenu+=`<p style='text-indent:2rem;margin-left:2rem'>${tip}</p>`
+				submenu+=`<p style='text-align:left;text-indent:3rem'>${tip}</p>`
 			}
 			submenu+="</div>"
           $("#menubar").append(ele)
@@ -119,7 +119,7 @@
       </span>
       <div id="menubar"></div>
     </div>
-    <h2 id="maintitle" style="font-size:3vw;padding:1vw 0;background:black;color:white"> 스프링 WAS 활용한 로그인 시스템[작성자이름]</h2>
+    <h2 id="maintitle" style="font-size:3vw;padding:1vw 0;text-align:center;background:black;color:white"> 스프링 WAS 활용한 로그인 시스템[작성자이름]</h2>
     <p style="text-align:right;margin-right:3vw;margin-bottom:0.8vw">
       <a href="https://github.com/dmsgur/classification_model.git">
         view git source
