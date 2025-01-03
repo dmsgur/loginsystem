@@ -5,7 +5,7 @@ data_sets = []
 //데이터 아키텍처{sub_title:"",sub_content:"",sub_img:[],user_fill:""}
 let data_sets=[]
 class DataSet{
-	constructor(sub_title){this.sub_title}
+	constructor(sub_title){console.log("생성호출");this.sub_title}
 	sub_title=""
 	user_fill=""
 	sub_content=[]
