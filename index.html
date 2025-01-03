@@ -87,11 +87,15 @@
           $("#sub_content").text(data_sets[ix].sub_content)
           let image_wsize =19
           let image_hsize =data_sets[ix].sub_img.length>5?30:40
-          for(url of data_sets[ix].sub_img){
-            $("#sub_img").append(createImageUrl(url,3000,image_wsize,image_hsize))
+		  let inHtml =""
+          for(let i=0;i<data_sets[ix].sub_img.length;i++){
+			inHtml+=`<div>`
+			inHtml+=`<p>${data_sets[ix].imgtitle[i]}</p>`
+			inHtml+=createImageUrl(url,3000,image_wsize,image_hsize)
+			inHtml+=`<p>${data_sets[ix].imglog[i]}</p></div>`
+            $("#sub_img").append(inHtml)
           }
           $("#user_fill").text(data_sets[ix].user_fill)
-          $("#asso_file").text(data_sets[ix].asso_file)
           $("#cover").css("display","block")
           $("#display").css("display","block")
           $("#display_closer").css("display","inline")
@@ -140,9 +144,7 @@
       <hr style="margin:0 10%;border:2px solid gray;margin-bottom:1vh">
       <p id="sub_content" style="height:3vh;color:blue"></p>
       <div id="sub_img" ></div>
-      <p id="user_fill" style="height:3vh;position:absolute;bottom:6vh">
-        </p>
-      <p id="asso_file" style="height:3vh;position:absolute;bottom:0.5vh"></p>
+      <p id="user_fill" style="height:3vh;position:absolute;bottom:6vh"></p>
     </div>
     <span id="display_closer" class="material-symbols-outlined" style="position:absolute;
       top:7vw;right:4vw;font-size:2.5vw;z-index:123;cursor:pointer;display:none">
@@ -159,7 +161,8 @@
     function createImageUrl(thumbnail_id,w=500,width,height){
       return `<p style="float:left;margin-left:0.1vw;${width?("width:"+width+"%;"):"width:100%;"} ${height?("height:"+height+"vh"):"height:100%"}"><img src="https://drive.google.com/thumbnail?id=${thumbnail_id}&sz=w${w}" ></p>`
     }
-    function imagePlace(){
+    function imagePlace(inx){
+		
       createImageUrl($("#thum1"),"17KPamLcwRpk7yZVpjMqqaumfIBL-8R8k")
     }
   </script>
