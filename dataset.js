@@ -6,6 +6,7 @@ data_sets = []
 var data_sets=[]
 class DataSet{
 	constructor(sub_title){this.sub_title}
+	sub_title=""
 	user_fill=""
 	sub_content=[]
 	sub_img=[]
