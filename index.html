@@ -76,7 +76,7 @@
           inHtml+=`
             <div class="content" num=${i}>
               <div class="top-cont">${createImageUrl(data_sets[i]["sub_img"][0],3000)}</div>
-              <div class="bottom-cont">${data_sets[i]["sub_content"]}</div>
+              <div class="bottom-cont">${data_sets[i]["sub_content"][0]}</div>
             </div>
           `        }
         $("#container").html(inHtml)
@@ -91,7 +91,7 @@
           for(let i=0;i<data_sets[ix].sub_img.length;i++){
 			inHtml+=`<div>`
 			inHtml+=`<p>${data_sets[ix].imgtitle[i]}</p>`
-			inHtml+=createImageUrl(url,3000,image_wsize,image_hsize)
+			inHtml+=createImageUrl(data_sets[ix].sub_img[i],3000,image_wsize,image_hsize)
 			inHtml+=`<p>${data_sets[ix].imglog[i]}</p></div>`
             $("#sub_img").append(inHtml)
           }
