@@ -3,7 +3,7 @@ data_sets = []
 
 //메뉴 생성기 종료 E==============================
 //데이터 아키텍처{sub_title:"",sub_content:"",sub_img:[],user_fill:""}
-var data_sets=[]
+let data_sets=[]
 class DataSet{
 	constructor(sub_title){this.sub_title}
 	sub_title=""
