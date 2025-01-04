@@ -103,9 +103,9 @@
     let menu_cur=0
     
     $(() => {
-      if(!location.href.split("/")[3]){
-        location.href+="index.html"
-      }
+      // if(!location.href.split("/")[3]){
+      //   location.href+="index.html"
+      // }
       try{
         let menuarr = location.href.split("?")[1].split("=")
         if (menuarr[0]=="menu")menu_cur=menuarr[1]
@@ -204,8 +204,8 @@
   <h2 id="maintitle" style="font-size:3vw;padding:1vw 0;text-align:center;background:black;color:white"> 스프링 WAS 활용한 로그인
     시스템[작성자이름]</h2>
   <p style="text-align:right;margin-right:3vw;margin-bottom:0.8vw">
-    <a href="https://github.com/dmsgur/classification_model.git">
-      view git source
+    <a href="https://github.com/dmsgur/loginsystem.git">
+      view git source repository
     </a>
   </p>
   <div id="container">
@@ -292,7 +292,7 @@
     
     let inHtml = ""
     for (let i = 0; i < data_sets[mix].sub_img[six].length; i++) {
-      inHtml += `<div style="float:left;margin-left:1vw;margin-bottom:5vw" class="detail_cont">`
+      inHtml += `<div style="float:left;margin-left:1vw;margin-bottom:5vw" class="detail_cont" sourceurl="${data_sets[mix].sub_img[six][i].sourceurl}">`
       inHtml += `<p style="background:lightgray;padding:0.2vw"> ${data_sets[mix].sub_img[six][i].imgtitle}</p>`
       inHtml += createImageUrl(data_sets[mix].sub_img[six][i].imgurl, 3000, image_wsize, image_hsize,true)
       inHtml += `<p class="elips_cont">${data_sets[mix].sub_img[six][i].imglog}</p></div>`
@@ -318,7 +318,7 @@
   function viweContainer(){
     $(".logcont").remove()
     $(".imgcontainer").css({position:"static",...protocss,maxWidth:"100%",maxHeight:"100%"})
-    curcontainer.find(".imgcontainer").css({zIndex: 111,position:"absolute",maxWidth: "91%",height:"70vh",maxHeight: "70%",left: "4vw",top:"5vw"}).append(`<p class="logcont" style="background:white;padding:0.5vw;border:1px solid gray">${curcontainer.find(".elips_cont").text()}</p>`)
+    curcontainer.find(".imgcontainer").css({zIndex: 111,position:"absolute",maxWidth: "91%",height:"70vh",maxHeight: "70%",left: "4vw",top:"5vw"}).prepend(`<a style="color:blue" href="${$(this).attr('sourceurl')?$(this).attr('sourceurl'):''}">${$(this).attr('sourceurl')?'소스보기':''}</a>`).append(`<p class="logcont" style="background:white;padding:0.5vw;border:1px solid gray">${curcontainer.find(".elips_cont").text()}</p>`)
     $("#img_closer").css("display")!="inline"&&$("#img_closer").css({display:"inline"})
     $(".arraw").css("display")=="none"&&$(".arraw").css("display","inline")
     $("#img_closer").on("click",function(){
