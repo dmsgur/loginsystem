@@ -54,12 +54,10 @@ public class MemberController {
 	public Map signin(HttpServletRequest request, @RequestBody Map<String,String> logindata) {
 		System.out.println(logindata);
 		HashMap<String, Object> hm = new HashMap<>();
-		//로그인 검증
-		
+		//로그인 검증		
 		HttpSession auth =  request.getSession(true);
 		hm.put("message", logindata);
-		return hm;
-		
+		return hm;		
 	}
 	@GetMapping("/logout")
 	public void signout() {}
