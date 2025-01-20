@@ -25,6 +25,7 @@ public class MemberDAOImpl implements MemberDAO {
 	}
 	@Override
 	public List<MemberDTO> memberList() {
-		return null;
+		List<MemberDTO> ll = session.selectList("memberMapper.memberList");
+		return ll;
 	}
 }
