@@ -20,7 +20,8 @@ public class MemberDAOImpl implements MemberDAO {
 	}
 	@Override
 	public MemberDTO signinMemeber(Map<String, String> data) {
-		return null;
+		MemberDTO member = session.selectOne("memberMapper.signin", data);
+		return member;
 	}
 	@Override
 	public List<MemberDTO> memberList() {
