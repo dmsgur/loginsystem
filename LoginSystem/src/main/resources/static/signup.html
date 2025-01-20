@@ -81,6 +81,7 @@
 		evt.preventDefault();// 기본이벤트 제거
 		const payload = new FormData($("#memform")[0])//ui폼데이터 수집
 		console.log(payload)
+		
 		//서버로의 데이터 전송
 		const res = await fetch("/member/signup",{method:"post",body:payload});
 		//promise 대기-서버응답시까지
