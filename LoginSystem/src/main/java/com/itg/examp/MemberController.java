@@ -6,11 +6,16 @@ import java.util.Map;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.itg.examp.dao.MemberDAO;
 import com.itg.examp.dto.MemberDTO;
+
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpSession;
+import jakarta.websocket.Session;
 
 @RestController
 @RequestMapping("/member")
@@ -46,7 +51,16 @@ public class MemberController {
 		return hm;
 	}
 	@PostMapping("/login")
-	public void signin() {}
+	public Map signin(HttpServletRequest request, @RequestBody Map<String,String> logindata) {
+		System.out.println(logindata);
+		HashMap<String, Object> hm = new HashMap<>();
+		//로그인 검증
+		
+		HttpSession auth =  request.getSession(true);
+		hm.put("message", logindata);
+		return hm;
+		
+	}
 	@GetMapping("/logout")
 	public void signout() {}
 	@GetMapping("/listview")
