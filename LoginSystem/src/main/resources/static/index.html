@@ -34,6 +34,7 @@
 			const ctype = "application/json"
 			const res = await fetch("/member/login",{method:"post",headers:{"Content-type":ctype},body:JSON.stringify(logindata)})
 			const data = await res.json();
+			
 			console.log(data)
 			if(data.message=="로그인성공"){
 				$("#signinContain").html(`
