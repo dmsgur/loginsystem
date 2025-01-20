@@ -14,6 +14,11 @@ public class MemberDAOImpl implements MemberDAO {
 	SqlSessionTemplate session;
 	@Override
 	public int signupMember(MemberDTO member) {
+		System.out.println(member.getMid());
+		System.out.println(member.getMpw());
+		System.out.println(member.getName());
+		System.out.println(member.getAddress());
+		System.out.println(member.getAge());
 		int res =  session.insert("memberMapper.signup",member);
 		System.out.println("회원가입DAO:"+res);
 		return res;

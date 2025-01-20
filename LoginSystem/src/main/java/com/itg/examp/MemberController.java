@@ -15,6 +15,7 @@ import com.itg.examp.dao.MemberDAO;
 import com.itg.examp.dto.MemberDTO;
 
 import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.HttpSession;
 import jakarta.websocket.Session;
 
@@ -70,7 +71,14 @@ public class MemberController {
 		
 	}
 	@GetMapping("/logout")
-	public void signout() {}
+	public HashMap<String , Object> signout(HttpServletRequest request,HttpServletResponse response) {
+		HttpSession auth =  request.getSession();
+		HashMap<String, Object> hm = new HashMap<>();
+		hm.put("message", auth.getAttribute("mid")+ "님 로그아웃 되었습니다.");
+		auth.invalidate();	// 저장된 쿠키값을 무효화 한다.
+		//response.sendRedirect("/");	
+		return hm;		
+	}
 	@GetMapping("/listview")
 	public Map listView(HttpServletRequest request) {
 		HttpSession auth = request.getSession();
