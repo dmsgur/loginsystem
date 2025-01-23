@@ -1,3 +1,4 @@
+//commom.js 
 async function login(mid,mpw){//로그인 함수 분리
 	const logindata = {mid:$("#mid").val(),mpw:$("#mpw").val()}
 	const ctype = "application/json"
