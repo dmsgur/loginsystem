@@ -4,6 +4,7 @@
 		<title>정보처리기사_로그인시스템구현하기</title>
 		<meta charset="utf-8"/>
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+		<script src="common.js" ></script>
 	</head>
 	<body>
 		<h1> 공통모듈 작동 페이지 </h1>
@@ -16,7 +17,8 @@
 	</body>
 	<script>
 		$("#signin").click(async ()=>{
-			const data = await login($("#myid").val(),$("#mpw").val());
+			const data = await login($("#myid").val(),$("#mypw").val());
+			console.log(data)
 			if(data.message=="로그인성공"){
 				$("#uicontainer").text(`${data.member.mid}(${data.member.name}) 
 												님 로그인 하신걸 환영합니다.`)

@@ -4,6 +4,7 @@
 		<title>정보처리기사_로그인시스템구현하기</title>
 		<meta charset="utf-8"/>
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+		<script src="common.js" ></script>
 	</head>
 	<body>
 	
@@ -46,7 +47,7 @@
 					${data.member.mid}(${data.member.name}) 님 로그인 하신걸 환영합니다.
 				`);
 				$("#listview").css("display","inline");
-				logout($("#memcontrol"))				
+				await logout($("#memcontrol"))				
 			}else{
 				alert(data.message);
 			}	
@@ -69,16 +70,7 @@
 				alert(data.message);
 			}
 		})
-		$("a").click(async function(evt){
-			if($(this).text()=="로그아웃"){
-				evt.preventDefault();
-				const res = await fetch($(this).attr("href"))
-				const data = await res.json();
-				alert(data.message)
-				location.href="/";
-				return false;
-			}
-		})
+		
 	</script>
 	<style>
 		#container{padding:0.5rem;width:25rem;height:8rem;}
